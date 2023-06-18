@@ -1,0 +1,56 @@
+How to use the flask calculator:
+When running the script, it will guide you towards the localhost; 127.0.0.1:5000
+Now you can use the endpoint HTTP requests to use the Stack Calculator
+
+basic functions:
+
+If you want to view the inputs/numbers you added in a stack:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/peek
+//example:
+127.0.0.1:5000/calc/50/peek
+In this example you've check what numbers are in stack '50'
+
+If you want to push numbers into a stack:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/push/<int:n>
+//example:
+127.0.0.1:5000/calc/50/push/17
+In this example you've pushed the integer '17' to stack '50'
+
+If you want to remove the last pushed number from a stack:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/pop
+//example:
+127.0.0.1:5000/calc/50/pop
+In this example you've removed the last pushed number from stack '50'
+
+Calculator functions:
+
+If you want to add the last 2 pushed numbers together:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/add
+//example:
+127.0.0.1:5000/calc/50/add
+In this example you've removed the last 2 pushed numbers from stack '50' and added them together; for instance [5, 2], will become, 5 + 2 = 7
+
+If you want to substract the last 2 pushed numbers from each other:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/substract
+//example:
+127.0.0.1:5000/calc/50/substract
+In this example you've removed the last 2 pushed numbers from stack '50' and substracted the second pushed number from the first pushed number; for instance [5, 2], will become, 5 - 2 = 3
+
+If you want to multiply the last 2 pushed numbers with each other:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/multiply
+//example:
+127.0.0.1:5000/calc/50/multiply
+In this example you've removed the last 2 pushed numbers from stack '50' and multiplied the last 2 pushed numbers with each other; for instance [5, 2], will become, 5 * 2 = 10
+
+If you want to divide the last 2 pushed numbers from each other:
+//rawcode:
+127.0.0.1:5000/calc/<int:id>/divide
+//example:
+127.0.0.1:5000/calc/50/divide
+In this example you've removed the last 2 pushed numbers from stack '50' and divided the second pushed number from the first pushed number; for instance [6, 2], will become, 6 / 2 = 3
